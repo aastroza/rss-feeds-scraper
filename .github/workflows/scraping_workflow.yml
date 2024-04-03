@@ -1,4 +1,4 @@
-name: Scrapy Workflow
+name: Scraping Workflow
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-scrapy-script:
+  run-scraping-script:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -21,7 +21,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.lock
     - name: Run scrapy.py
-      run: python scripts/scrapy.py
+      run: python scripts/scraping.py
     - name: Commit and push if there are changes
       run: |
         git config --local user.email "actions@github.com"
