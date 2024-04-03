@@ -18,12 +18,10 @@ d = Data(
     feeds = data
 )
 
-#print(d.model_dump())
 json_data = d.model_dump_json()
-print(json_data)
 today_date = datetime.now().strftime("%Y-%m-%d")
 directory_path = f"data/"
 file_path = os.path.join(directory_path, f"{today_date}.json")
+
 with open(file_path, "w") as file:
-    print(file_path)
-    json.dump(json_data, file)
+    file.write(json_data)
